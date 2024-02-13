@@ -44,43 +44,6 @@ obj.sum();
 obj.multi();
 */
 
-class abc
-{
-	constructor(a,b)
-	{
-		this.x=a;
-		this.y=b;
-	}
-	sum() 
-	{
-		document.write(this.x+this.y +"<br>");
-	}
-}
-
-class pqr extends abc
-{
-	constructor(x,y,z)
-	{
-		super(x,y);
-		this.z=z;
-	}
-	multi() 
-	{
-		document.write(this.x*this.y*this.z +"<br>");
-	}
-}
-
-var obj=new pqr(5,5,5);
-obj.sum();
-obj.multi();
-
-
-
-
-
-
-
-
 
 /*
 //Multi level Inheritance
@@ -173,6 +136,47 @@ obj1.multi();
 obj2.sum();
 obj2.sub();
 */
+
+
+
+
+
+
+
+class abc
+{
+	constructor(a,b)
+	{
+		this.x=a;
+		this.y=b;
+	}
+	sum() 
+	{
+		document.write(this.x+this.y +"<br>");
+	}
+}
+
+class pqr extends abc
+{
+	constructor(x,y,z)
+	{
+		super(x,y);
+		this.z=z;
+	}
+	multi() 
+	{
+		document.write(this.x*this.y*this.z +"<br>");
+	}
+}
+
+var obj=new pqr(5,5,5);
+obj.sum();
+obj.multi();
+
+
+
+
+
 
 
 

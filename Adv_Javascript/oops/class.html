@@ -16,6 +16,21 @@ sum();
 -->
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!--
 
 OOPS
@@ -99,11 +114,14 @@ simple()
 
 */
 
+// making group of data member(variable) and member function by 
+//class keyword that called class 
+
 class abc
 {
 	sum() 
 	{
-		var a=10;
+		var a=10;  // local
 		var b=20;
 		var sum;
 		sum=a+b;
@@ -118,7 +136,39 @@ class abc
 		document.write(multi + "<br>"			);
 	}
 }
+
+
+// object is instance of class / withaout object classs in nothing
+// we can access class all properties by object
+
 var obj=new abc;
 obj.sum();
 obj.multi();
+
+
+
+
+
+
+</script>
+
+<hr>
+
+
+
+<script>
+
+// class with function with argument
+class abc
+{
+	simple(a,b)
+	{
+		var sum;
+		sum=a+b;
+		document.write(sum);
+	}
+}
+const obj= new abc();
+obj.simple(5,7);
+
 </script>

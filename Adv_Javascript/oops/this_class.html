@@ -1,23 +1,35 @@
 <script>
 class abc
 {
-	constructor(a,b)
+	// this is autocall function for iniatilised something 
+	constructor(x,y)
 	{
-		this.x=a;
-		this.y=b;
+		this.x=x;
+		this.y=y;
 	}
 	sum() 
-	{
-		document.write(this.x+this.y +"<br>");
+	{	
+		var sum;
+		sum=this.x+this.y;
+		document.write(sum + "<br>");
 	}
 	multi()
 	{
-		document.write(this.x*this.y +"<br>");
+		var multi;
+		multi=this.x*this.y;
+		document.write(multi + "<br>"			);
+	}
+	sub()
+	{
+		var sub;
+		sub=this.y-this.x;
+		document.write(sub + "<br>"			);
 	}
 }
-var obj=new abc(5,5);
+var obj=new abc(5,10);
 obj.sum();
 obj.multi();
+obj.sub();
 </script>
 
 
