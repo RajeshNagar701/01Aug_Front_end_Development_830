@@ -7,8 +7,6 @@ export class Card_class extends Component {
         this.props=props;
     }
     
-
-
     render() {
         return (
             <div className="col-md-4">

@@ -45,30 +45,32 @@
     <script>
 	
 	
-	fetch("https://jsonplaceholder.typicode.com/photos/8")
+	fetch("https://jsonplaceholder.typicode.com/photos")
 	  .then((response) => {
 		return response.json();
 	  })
-	  .then((singleobject) => {
+	  .then((object) => {
 		   //console.log(data);
-		   showall(singleobject)
+		   showall(object)
 	  })
 	  ;
         
 	
 		var list=document.getElementById('mydatalist');
-		function showall(singleobject)
+		function showall(objarr)
 		{
-			
+			for(var data of objarr)
+			{
 			var html=`<div class="col-md-3">
 						<div class="card">
-						  <img src="${singleobject.url}" class="card-img-top" alt="" />
+						  <img src="${data.url}" class="card-img-top" alt="" />
 						  <div class="card-body">
-							<h5 class="card-title">${singleobject.title}</h5>
+							<h5 class="card-title">${data.title}</h5>
 						  </div>
 						</div>
 					  </div>`;
-			list.insertAdjacentHTML('beforeend', html);		  
+					list.insertAdjacentHTML('beforeend', html);	
+			}			
 			
 		}
 	
