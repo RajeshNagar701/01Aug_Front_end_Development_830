@@ -1,3 +1,4 @@
+import React_Bootstrap from "./Bootstrap/React_Bootstrap";
 import CSS from "./CSS/CSS";
 import Class_compo from "./Component/Class_compo";
 import Func_compo from "./Component/Func_compo";
@@ -46,9 +47,11 @@ function App() {
       //<Func_state/>  
       //<Class_state/>  
        
-      //mui & Styled-compopnent
+      // React boostrap &  mui & Styled-compopnent
+      
+      <React_Bootstrap/>
       //<MUI/>
-      <Styled_component/>  
+      //<Styled_component/>  
 
 
       }
