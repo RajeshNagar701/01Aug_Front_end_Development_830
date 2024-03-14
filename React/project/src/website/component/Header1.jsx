@@ -5,17 +5,7 @@ import { NavLink } from 'react-router-dom'
 function Header1() {
     return (
         <div>
-            <Helmet>
-                <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
-                <link rel="stylesheet" type="text/css" href="website/css/bootstrap.css" />
-                <link href="website/css/style.css" rel="stylesheet" />
-                <link href="website/css/responsive.css" rel="stylesheet" />
-
-                
-                
-               
-            </Helmet>
-
+           
             
             <div className="hero_area">
                 {/* header section strats */}
@@ -170,6 +160,12 @@ function Header1() {
                 </section>
                 {/* end slider section */}
             </div>
+            <Helmet>
+           
+        
+           
+       </Helmet>
+       
         </div>
 
     )
