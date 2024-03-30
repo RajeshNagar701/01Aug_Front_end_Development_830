@@ -4,6 +4,7 @@ import Class_compo from "./Component/Class_compo";
 import Func_compo from "./Component/Func_compo";
 import JSX from "./JSX/JSX";
 import Layout from "./Layout/Layout";
+import Main_lazy from "./Lazy_suspense/Main_lazy";
 import Class_lefe from "./Lifecycle/Class/Class_lefe";
 import Func_life from "./Lifecycle/Func/Func_life";
 import MUI from "./MUI/MUI";
@@ -61,8 +62,10 @@ function App() {
       // life cycle
       
       //<Class_lefe/>
-       <Func_life/> 
+      //<Func_life/> 
 
+      // lazy loading
+        <Main_lazy/>
 
       }
       

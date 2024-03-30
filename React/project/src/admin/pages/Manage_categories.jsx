@@ -1,23 +1,40 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Aheader from '../component/Aheader'
 import { Helmet } from 'react-helmet'
+import axios from 'axios';
 
 function Manage_categories() {
+
+    useEffect(() => {
+        fetch();
+    }, []);
+    const [data, setData] = useState([]);
+    const fetch = async () => {
+        const res = await axios.get(`http://localhost:3000/categories`);
+        console.log(res.data);
+        setData(res.data);
+    }
+    const deleteHandel = async (id) => {
+        const res = await axios.delete(`http://localhost:3000/categories/${id}`);
+        console.log(res.data);
+        fetch();
+    }
+    
+
     return (
         <div id="wrapper">
-                <Helmet>
+            <Helmet>
                 <script src="admin/assets/js/dataTables/jquery.dataTables.js"></script>
                 <script src="admin/assets/js/dataTables/dataTables.bootstrap.js"></script>
-               
-                </Helmet>
-            <Aheader/>
-            
+
+            </Helmet>
+            <Aheader />
+
             <div id="page-wrapper">
                 <div id="page-inner">
                     <div className="row">
                         <div className="col-md-12">
-                            <h2>Add Categories</h2>
-                            <h5>Welcome Jhon Deo , Love to see you back. </h5>
+                            <h2>Manage Categories</h2>
                         </div>
                     </div>
                     {/* /. ROW  */}
@@ -34,36 +51,29 @@ function Manage_categories() {
                                         <table className="table table-striped table-bordered table-hover" id="dataTables-example">
                                             <thead>
                                                 <tr>
-                                                    <th>Rendering engine</th>
-                                                    <th>Browser</th>
-                                                    <th>Platform(s)</th>
-                                                    <th>Engine version</th>
-                                                    <th>CSS grade</th>
+                                                    <th>ID</th>
+                                                    <th>Categories Name</th>
+                                                    <th>Images</th>
+                                                    <th align="center">Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr className="odd gradeX">
-                                                    <td>Trident</td>
-                                                    <td>Internet Explorer 4.0</td>
-                                                    <td>Win 95+</td>
-                                                    <td className="center">4</td>
-                                                    <td className="center">X</td>
-                                                </tr>
-                                                <tr className="even gradeC">
-                                                    <td>Trident</td>
-                                                    <td>Internet Explorer 5.0</td>
-                                                    <td>Win 95+</td>
-                                                    <td className="center">5</td>
-                                                    <td className="center">C</td>
-                                                </tr>
-                                                <tr className="odd gradeA">
-                                                    <td>Trident</td>
-                                                    <td>Internet Explorer 5.5</td>
-                                                    <td>Win 95+</td>
-                                                    <td className="center">5.5</td>
-                                                    <td className="center">A</td>
-                                                </tr>
-                                                
+                                                {
+                                                    data && data.map((value,index,arr) => {
+                                                        return (
+                                                            <tr className="odd gradeX" key={index}>
+                                                                <td>{value.id}</td>
+                                                                <td>{value.cate_name}</td>
+                                                                <td><img src={value.cate_img} width="50px" alt="" /></td>
+                                                                <td className="center">
+                                                                    <button className='btn btn-danger' onClick={()=>deleteHandel(value.id)} >Delete</button>
+                                                                </td>
+                                                            </tr>
+                                                        )
+                                                    })
+                                                }
+
+
                                             </tbody>
                                         </table>
                                     </div>
@@ -72,16 +82,16 @@ function Manage_categories() {
                             {/*  End  Bordered Table  */}
                         </div>
                     </div>
-                   
+
                 </div>
             </div>
             {/* /. PAGE INNER  */}
             <Helmet>
-            <script src="admin/assets/js/bootstrap.min.js"></script>
-           
-            <script src="admin/assets/js/dataTables/jquery.dataTables.js"></script>
-            <script src="admin/assets/js/dataTables/dataTables.bootstrap.js"></script>
-        
+                <script src="admin/assets/js/bootstrap.min.js"></script>
+
+                <script src="admin/assets/js/dataTables/jquery.dataTables.js"></script>
+                <script src="admin/assets/js/dataTables/dataTables.bootstrap.js"></script>
+
             </Helmet>
         </div>
 
