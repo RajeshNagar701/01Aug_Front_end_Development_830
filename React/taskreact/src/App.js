@@ -38,7 +38,7 @@ function App() {
       // css  & module css  & sass
       //<CSS/>  
       //<Module_css/>  
-      //<Sass/>  
+      <Sass/>  
 
 
 
@@ -65,7 +65,7 @@ function App() {
       //<Func_life/> 
 
       // lazy loading
-        <Main_lazy/>
+       // <Main_lazy/>
 
       }
       

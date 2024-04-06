@@ -4,19 +4,19 @@ import { Helmet } from 'react-helmet'
 import axios from 'axios';
 import { toast } from 'react-toastify';
 
-function Manage_categories() {
+function Manage_products() {
 
     useEffect(() => {
         fetch();
     }, []);
     const [data, setData] = useState([]);
     const fetch = async () => {
-        const res = await axios.get(`http://localhost:3000/categories`);
+        const res = await axios.get(`http://localhost:3000/products`);
         console.log(res.data);
         setData(res.data);
     }
     const deleteHandel = async (id) => {
-        const res = await axios.delete(`http://localhost:3000/categories/${id}`);
+        const res = await axios.delete(`http://localhost:3000/products/${id}`);
         console.log(res.data);
         toast.success('Data Delete SUccess');
         fetch();
@@ -46,7 +46,7 @@ function Manage_categories() {
                             {/* Advanced Tables */}
                             <div className="panel panel-default">
                                 <div className="panel-heading">
-                                    Advanced Tables
+                                   Manage Products
                                 </div>
                                 <div className="panel-body">
                                     <div className="table-responsive">
@@ -54,7 +54,10 @@ function Manage_categories() {
                                             <thead>
                                                 <tr>
                                                     <th>ID</th>
-                                                    <th>Categories Name</th>
+                                                    <th>Products Name</th>
+                                                    <th>Cate Id</th>
+                                                    <th>Products Price</th>
+                                                    <th>Description</th>
                                                     <th>Images</th>
                                                     <th align="center">Action</th>
                                                 </tr>
@@ -65,8 +68,11 @@ function Manage_categories() {
                                                         return (
                                                             <tr className="odd gradeX" key={index}>
                                                                 <td>{value.id}</td>
-                                                                <td>{value.cate_name}</td>
-                                                                <td><img src={value.cate_img} width="50px" alt="" /></td>
+                                                                <td>{value.prod_name}</td>
+                                                                <td>{value.cate_id}</td>
+                                                                <td>{value.price}</td>
+                                                                <td>{value.desc}</td>
+                                                                <td><img src={value.prod_img} width="50px" alt="" /></td>
                                                                 <td className="center">
                                                                     <button className='btn btn-danger' onClick={()=>deleteHandel(value.id)} >Delete</button>
                                                                 </td>
@@ -100,4 +106,4 @@ function Manage_categories() {
     )
 }
 
-export default Manage_categories
+export default Manage_products
