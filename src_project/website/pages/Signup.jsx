@@ -1,11 +1,20 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import Haeder2 from '../component/Haeder2'
 import Footer from '../component/Footer'
 import axios from 'axios';
 import { toast } from 'react-toastify';
-import { Link } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
 
 function Signup() {
+
+    const redirect=useNavigate();
+    
+    useEffect(()=>{
+        if(localStorage.getItem('uid'))
+        {
+            redirect('/');
+        }
+    });
 
     const [formvalue, setFormvalue] = useState({
         id: "",
@@ -18,7 +27,7 @@ function Signup() {
     });
 
     const onChangehandel = (e) => {
-        setFormvalue({ ...formvalue, id: new Date().getTime().toString(), [e.target.name]: e.target.value });
+        setFormvalue({ ...formvalue, id: new Date().getTime().toString(),status:"Unblock",[e.target.name]: e.target.value });
         console.log(formvalue);
     }
 
@@ -60,11 +69,21 @@ function Signup() {
     const submitHandel = async (e) => {
         e.preventDefault();
         if (validation()) {
-            const res = await axios.post(`http://localhost:3000/user`, formvalue);
-            console.log(res);
-            if (res.status == 201) {
-                toast.success('Data Add Success');
+            const res_arr=await axios.get(`http://localhost:3000/user?email=${formvalue.email}`);
+            console.log(res_arr);
+            if(res_arr.data.length>0)
+            {
+                toast.error('Email id already Exist !');
                 setFormvalue({ ...formvalue, id: "", name: "", email: "", password: "",mobile:"",img:"" });
+            }
+            else
+            {
+                const res = await axios.post(`http://localhost:3000/user`, formvalue);
+                console.log(res);
+                if (res.status == 201) {
+                    toast.success('Data Add Success');
+                    setFormvalue({ ...formvalue, id: "", name: "", email: "", password: "",mobile:"",img:"" });
+                }
             }
         }
     }

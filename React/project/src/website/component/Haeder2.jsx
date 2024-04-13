@@ -64,7 +64,7 @@ function Haeder2({ active }) {
                                     if (localStorage.getItem('uid')) {
                                         return (
                                             <>
-                                                <NavLink to="/signup">
+                                                <NavLink to="/profile">
                                                     <i className="fa fa-user" aria-hidden="true" />
                                                     <span>
                                                         My Account /{localStorage.getItem('uname')}

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Haeder2 from '../component/Haeder2'
 import Footer from '../component/Footer'
 import axios from 'axios';
@@ -8,6 +8,13 @@ import { Link,useNavigate } from 'react-router-dom';
 function Login() {
 
     const redirect=useNavigate();
+
+    useEffect(()=>{
+        if(localStorage.getItem('uid'))
+        {
+            redirect('/');
+        }
+    });
 
     const [formvalue, setFormvalue] = useState({
         email: "",
@@ -49,6 +56,7 @@ function Login() {
                 {
                     if(res_arr.data[0].status=="Unblock")
                     {
+                        // session created in browser
                         localStorage.setItem('uid',res_arr.data[0].id);
                         localStorage.setItem('uname',res_arr.data[0].name);    
 
