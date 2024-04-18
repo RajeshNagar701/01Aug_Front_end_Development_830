@@ -18,7 +18,6 @@ export class Class_lefe extends Component {
     {
         super();
         this.state={
-            
         }
     }
 

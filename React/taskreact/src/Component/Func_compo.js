@@ -7,7 +7,7 @@ Components are independent and reusable bits of code. They serve the same purpos
 JavaScript functions, but work in isolation and return HTML.
 
 Components come in two types, 
-1) Class components
+1)Class components
 2)Function components, 
 
 Class Component
