@@ -17,6 +17,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import Signup from "./website/pages/Signup";
 import Login from "./website/pages/Login.jsx";
 import Profile from "./website/pages/Profile.jsx";
+import Edit_profile from "./website/pages/Edit_profile.jsx";
+import View_shop from "./website/pages/View_shop.jsx";
 
 function App() {
   return (
@@ -25,12 +27,17 @@ function App() {
       <Routes>
           <Route path="/" element={<><Home/></>}></Route>
           <Route path="/shop" element={<><Shop/></>}></Route>
+          <Route path="/view_shop/:cate_id" element={<><View_shop/></>}></Route>
           <Route path="/contact" element={<><Contact/></>}></Route>
           <Route path="/why" element={<><Why/></>}></Route>
           <Route path="/testimonial" element={<><Testimonial/></>}></Route>
           <Route path="/signup" element={<><Signup/></>}></Route>
           <Route path="/login" element={<><Login/></>}></Route>
           <Route path="/profile" element={<><Profile/></>}></Route>
+                      {
+                      //edit_profile/1712982083726
+                      }
+          <Route path="/edit_profile/:id" element={<><Edit_profile/></>}></Route> 
           <Route path="*" element={<><PNF/></>}></Route>
 
 

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Haeder2 from '../component/Haeder2'
 import Footer from '../component/Footer'
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 function Shop() {
     useEffect(() => {
@@ -29,7 +30,7 @@ function Shop() {
                                 return (
                                     <div className="col-sm-6 col-md-4 col-lg-4">
                                         <div className="box">
-                                            <a href>
+                                            <Link to={'/view_shop/'+value.id}>
                                                 <div className="img-box">
                                                     <img src={value.cate_img} width="100%" alt />
                                                 </div>
@@ -44,7 +45,7 @@ function Shop() {
                                                         New
                                                     </span>
                                                 </div>
-                                            </a>
+                                            </Link>
                                         </div>
                                     </div>
                                 )

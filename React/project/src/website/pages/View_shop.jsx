@@ -2,15 +2,16 @@ import React, { useState, useEffect } from 'react'
 import Haeder2 from '../component/Haeder2'
 import Footer from '../component/Footer'
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
-function Shop() {
+function View_shop() {
     useEffect(() => {
         fetch();
     }, []);
+    const {cate_id}=useParams();
     const [data, setData] = useState([]);
     const fetch = async () => {
-        const res = await axios.get(`http://localhost:3000/categories`);
+        const res = await axios.get(`http://localhost:3000/products?cate_id=${cate_id}`);
         console.log(res.data);
         setData(res.data);
     }
@@ -21,7 +22,7 @@ function Shop() {
                 <div className="container">
                     <div className="heading_container heading_center">
                         <h2>
-                            Latest Products
+                            View All Product
                         </h2>
                     </div>
                     <div className="row">
@@ -30,22 +31,20 @@ function Shop() {
                                 return (
                                     <div className="col-sm-6 col-md-4 col-lg-4">
                                         <div className="box">
-                                            <Link to={'/view_shop/'+value.id}>
+                                            <a href>
                                                 <div className="img-box">
-                                                    <img src={value.cate_img} width="100%" alt />
+                                                    <img src={value.prod_img} width="100%" alt />
                                                 </div>
                                                 <div className="detail-box">
                                                     <h6>
-                                                        {value.cate_name}
+                                                        {value.prod_name}
+                                                    </h6>
+                                                    <h6>
+                                                        {value.price}/- Rs
                                                     </h6>
                                                     
                                                 </div>
-                                                <div className="new">
-                                                    <span>
-                                                        New
-                                                    </span>
-                                                </div>
-                                            </Link>
+                                            </a>
                                         </div>
                                     </div>
                                 )
@@ -67,4 +66,4 @@ function Shop() {
     )
 }
 
-export default Shop
+export default View_shop

@@ -71,7 +71,7 @@ function Profile() {
                                         {data.mobile}
                                     </p>
                                     <div className="btn-box">
-                                        <button data-toggle="modal" data-target="#myModal" onClick={() => editdata(data.id)} className="btn btn-primary">
+                                        <button data-toggle="modal" data-target="#myModal" onClick={() => redirect('/edit_profile/'+ data.id)} className="btn btn-primary">
                                             Edit Profile
                                         </button>
 
