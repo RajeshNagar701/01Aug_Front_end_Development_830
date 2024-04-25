@@ -62,7 +62,7 @@ function Aheader() {
                                 </ul>
                             </li>
                             <li>
-                                <NavLink to="/manage_customer"><i className="fa fa-table fa-3x" />Customer</NavLink>
+                                <NavLink to="/manage_user"><i className="fa fa-table fa-3x" />Customer</NavLink>
                             </li>
                         </ul>
                     </div>

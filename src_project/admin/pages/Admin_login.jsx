@@ -24,7 +24,6 @@ function Admin_login() {
                         </button>
                         <a className="navbar-brand" href="index.html">Binary admin</a>
                     </div>
-                    <div style={{ color: 'white', padding: '15px 50px 5px 50px', float: 'right', fontSize: 16 }}> Last access : 30 May 2014 &nbsp; <a href="#" className="btn btn-danger square-btn-adjust">Logout</a> </div>
                 </nav>
                 {/* /. NAV TOP  */}
                
@@ -33,8 +32,8 @@ function Admin_login() {
                     <div id="page-inner">
                         <div className="row">
                             <div className="col-md-12">
-                                <h2>Blank Page</h2>
-                                <h5>Welcome Jhon Deo , Love to see you back. </h5>
+                                <h2>Admin Login</h2>
+                               
                             </div>
                         </div>
                         {/* /. ROW  */}

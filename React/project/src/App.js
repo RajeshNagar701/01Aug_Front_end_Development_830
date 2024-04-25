@@ -19,6 +19,7 @@ import Login from "./website/pages/Login.jsx";
 import Profile from "./website/pages/Profile.jsx";
 import Edit_profile from "./website/pages/Edit_profile.jsx";
 import View_shop from "./website/pages/View_shop.jsx";
+import Manage_user from "./admin/pages/Manage_user.jsx";
 
 function App() {
   return (
@@ -50,7 +51,7 @@ function App() {
           <Route path="/add_categories" element={<><Add_categories/></>}></Route>
           <Route path="/add_products" element={<><Add_products/></>}></Route>
           <Route path="/manage_products" element={<><Manage_products/></>}></Route>
-
+          <Route path="/manage_user" element={<><Manage_user/></>}></Route>
       </Routes>
     </BrowserRouter>
   );
