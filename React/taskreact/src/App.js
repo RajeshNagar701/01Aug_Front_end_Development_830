@@ -11,6 +11,7 @@ import MUI from "./MUI/MUI";
 import Module_css from "./Module_css/Module_css";
 import Class_props from "./Props/Class_props/Class_props";
 import Func_props from "./Props/Func_props/Func_props";
+import Main_props from "./Props_Driling/Main_props";
 import App_routing from "./Routing/App_routing";
 import Sass from "./Sass/Sass";
 import Class_state from "./State/Class_state/Class_state";
@@ -38,7 +39,10 @@ function App() {
       // css  & module css  & sass
       //<CSS/>  
       //<Module_css/>  
-      <Sass/>  
+      //<Sass/>  
+
+      // STATE Management
+      <Main_props/>  
 
 
 
