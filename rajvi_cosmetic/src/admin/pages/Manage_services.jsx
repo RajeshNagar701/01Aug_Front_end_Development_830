@@ -1,11 +1,22 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import AHeader from '../component/AHeader'
 import AFooter from '../component/AFooter'
-
+import axios from 'axios';
 function Manage_services() {
+
+    const [data, setData] = useState([]);
+    useEffect(() => {
+        fetch();
+    });
+    const fetch = async () => {
+        const res = await axios.get(`http://localhost:3000/services`);
+        console.log(res.data);
+        setData(res.data)
+    }
+
     return (
         <div>
-            <AHeader title="Manage Services"/>
+            <AHeader title="Manage Services" />
             < div className="container-fluid" >
                 <div className="container">
                     <div className="row">
@@ -29,19 +40,24 @@ function Manage_services() {
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>John</td>
-                                            <td>Doe</td>
-                                            <td>Doe</td>
-                                            <td>john@example.com</td>
-                                            <td>John</td>
-                                            <td>Doe</td>
-                                            <td>
-                                                <button className='btn btn-info mr-2'>Edit</button>
-                                                <button className='btn btn-danger'>Delete</button>
-                                            </td>
-                                        </tr>
-                                       
+                                        {
+                                            data && data.map((value, index, arr) => {
+                                                return (
+                                                    <tr>
+                                                        <td>{value.id}</td>
+                                                        <td>{value.cate_id}</td>
+                                                        <td>{value.service_name}</td>
+                                                        <td>{value.desc}</td>
+                                                        <td>{value.price}</td>
+                                                        <td><img src={value.ser_img} alt="" width="50px" /></td>
+                                                        <td>
+                                                            <button className='btn btn-info mr-2'>Edit</button>
+                                                            <button className='btn btn-danger'>Delete</button>
+                                                        </td>
+                                                    </tr>
+                                                )
+                                            })
+                                        }
                                     </tbody>
                                 </table>
 

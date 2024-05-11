@@ -32,7 +32,7 @@ function App() {
       <Route path="/signup" element={<Signup/>}></Route>
       <Route path="/about" element={<About/>}></Route>
       <Route path="/services" element={<Services/>}></Route>
-      <Route path="/view_services" element={<View_service/>}></Route>
+      <Route path="/view_service" element={<View_service/>}></Route>
       <Route path="/blog" element={<Blog/>}></Route>
       
       {// admin roues

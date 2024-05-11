@@ -12,7 +12,7 @@ function View_service() {
                         <div className="row">
                             <div className="col-lg-5" style={{ minHeight: 500 }}>
                                 <div className="position-relative h-100">
-                                    <img className="position-absolute w-100 h-100" src="img/pricing.jpg" style={{ objectFit: 'cover' }} />
+                                    <img className="position-absolute w-100 h-100" src="website/img/pricing.jpg" style={{ objectFit: 'cover' }} />
                                 </div>
                             </div>
                             <div className="col-lg-7 pt-5 pb-lg-5">
@@ -79,7 +79,7 @@ function View_service() {
                         <div className="row">
                             <div className="col-lg-6" style={{ minHeight: 500 }}>
                                 <div className="position-relative h-100">
-                                    <img className="position-absolute w-100 h-100" src="img/opening.jpg" style={{ objectFit: 'cover' }} />
+                                    <img className="position-absolute w-100 h-100" src="website/img/opening.jpg" style={{ objectFit: 'cover' }} />
                                 </div>
                             </div>
                             <div className="col-lg-6 pt-5 pb-lg-5">

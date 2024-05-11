@@ -1,8 +1,19 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import AHeader from '../component/AHeader'
 import AFooter from '../component/AFooter'
+import axios from 'axios';
 
 function Manage_contact() {
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        fetch();
+    });
+    const fetch = async () => {
+        const res = await axios.get(`http://localhost:3000/contacts`);
+        console.log(res.data);
+        setData(res.data)
+    }
     return (
         <div>
             <AHeader title="Manage Contact"/>

@@ -17,6 +17,7 @@ import Sass from "./Sass/Sass";
 import Class_state from "./State/Class_state/Class_state";
 import Func_state from "./State/Func_state/Func_state";
 import Styled_component from "./Styled-component/Styled_component";
+import CreateContext from "./UseContext/CreateContext";
 
 function App() {
   return (
@@ -42,8 +43,9 @@ function App() {
       //<Sass/>  
 
       // STATE Management
-      <Main_props/>  
-
+      //<Main_props/>  
+      
+      <CreateContext/>
 
 
       // Props

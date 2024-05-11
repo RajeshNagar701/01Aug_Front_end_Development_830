@@ -49,9 +49,9 @@ function Header2({title}) {
                         <div className="navbar-nav m-auto py-0">
                             <NavLink to="/" className="nav-item nav-link">Home</NavLink>
                             <NavLink to="/about" className="nav-item nav-link">About</NavLink>
-                            <NavLink to="/services" className="nav-item nav-link">Services</NavLink>
+                          
                             <div className="nav-item dropdown">
-                                <a href="#" className="nav-link dropdown-toggle" data-toggle="dropdown">Hair</a>
+                                <NavLink to="/services" className="nav-link dropdown-toggle" data-toggle="dropdown">Services</NavLink>
                                 <div className="dropdown-menu rounded-0 m-0">
                                     <NavLink to="/view_service" className="dropdown-item">Hair Spa</NavLink>
                                 </div>
