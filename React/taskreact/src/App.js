@@ -18,6 +18,7 @@ import Class_state from "./State/Class_state/Class_state";
 import Func_state from "./State/Func_state/Func_state";
 import Styled_component from "./Styled-component/Styled_component";
 import CreateContext from "./UseContext/CreateContext";
+import UseReducer from "./UseReducer/UseReducer";
 
 function App() {
   return (
@@ -45,7 +46,7 @@ function App() {
       // STATE Management
       //<Main_props/>  
       
-      <CreateContext/>
+      //<CreateContext/>
 
 
       // Props
@@ -72,6 +73,8 @@ function App() {
 
       // lazy loading
        // <Main_lazy/>
+
+       <UseReducer/>
 
       }
       
