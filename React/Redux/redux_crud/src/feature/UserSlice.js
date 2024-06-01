@@ -12,6 +12,7 @@ export const get_user=createAsyncThunk('get_user',async()=>{
     return res.data;
  });
 
+ 
 
 export const delete_user=createAsyncThunk('delete_user',async(id)=>{
     const res= await axios.delete(`http://localhost:3000/user/${id}`);
@@ -27,7 +28,8 @@ export const UserSlice=createSlice({
     name:'user',
     initialState:{
         name:"Rajesh nagar",
-        user:[]
+        user:[],
+      
     },
     reducers:{
     },
@@ -35,6 +37,7 @@ export const UserSlice=createSlice({
        [get_user.fulfilled]:(state,action)=>{
         state.user=action.payload;  
        }
+      
     }
 })
 

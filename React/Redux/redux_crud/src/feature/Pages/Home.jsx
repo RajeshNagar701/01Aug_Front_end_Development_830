@@ -9,7 +9,7 @@ import { delete_user, get_user } from '../UserSlice'
 
 function Home() {
 
-   
+    const redirect=useNavigate();
     const {name,user}=useSelector((state)=>state.user);
 
     const dispatch = useDispatch();
@@ -60,7 +60,7 @@ function Home() {
                                                         dispatch(delete_user(value.id))
                                                         toast.success('User Delete Success');
                                                     }}>Delete</button>
-                                                    <button className='btn btn-info'>Edit</button>
+                                                    <button className='btn btn-info' onClick={() => redirect('/edit_user/'+ value.id)}>Edit</button>
                                                     <button className='btn btn-success'>{value.status}</button>
                                                 </td>
                                             </tr>
